@@ -387,6 +387,543 @@
 // export default Team;
 
 
+// import React from 'react';
+// import {
+//   Box,
+//   Container,
+//   Grid,
+//   Typography,
+//   IconButton,
+//   Button,
+//   Card,
+//   Avatar,
+//   Paper,
+//   Divider,
+//   Stack,
+//   useTheme,
+//   useMediaQuery,
+//   Chip,
+// } from '@mui/material';
+// import {
+//   LinkedIn as LinkedInIcon,
+//   X as XIcon,
+//   ArrowForward as ArrowIcon,
+//   Email as EmailIcon,
+//   Phone as PhoneIcon,
+//   LocationOn as LocationIcon,
+//   Business as BusinessIcon,
+// } from '@mui/icons-material';
+// import { motion } from 'framer-motion';
+// import { Link } from 'react-router-dom';
+
+// const Team = () => {
+//   const theme = useTheme();
+//   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+//   const teamMembers = [
+//     {
+//       id: 1,
+//       name: 'Mansi Dixit',
+//       role: 'Founder and CEO',
+//       bio: `Mansi Dixit is the founder and CEO, bringing over 8 years of extensive finance experience to the team. With a background spanning JP Morgan Chase in Corporate Finance, Ernst & Young in Mergers and Acquisitions, and Bankers without Boundaries in Sustainable Finance, Mansi has a proven track record of success in diverse financial environments. She brings a wealth of expertise from her work with both international and Indian startups, where she has provided mentorship and strategic guidance. Mansi is a Chartered Accountant from the Institute of Chartered Accountants of India and is committed to promoting diversity and inclusion in the finance industry, serving as an advisor to various international organizations focused on this mission.`,
+//       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=600&fit=crop&crop=face',
+//       skills: ['Finance', 'Strategy', 'Leadership', 'M&A'],
+//       social: {
+//         linkedin: 'https://linkedin.com/in/mansi-dixit',
+//         x: 'https://x.com/mansi-dixit',
+//         email: 'mansi@nexusai.com',
+//       },
+//     },
+//     {
+//       id: 2,
+//       name: 'Gurijesh Jain',
+//       role: 'Co-Founder and Chief Financial Lead',
+//       bio: `Gurijesh is a practicing Chartered Accountant registered with the Institute of Chartered Accountants of India who brings over a decade of comprehensive expertise to his role as Chief Financial Lead. His illustrious career spans across finance, accounts, auditing, and advisory services, with a particular focus on guiding clients through financial management, tax strategies, and regulatory compliance globally. Gurijesh's forte lies in leading finance operations for startups, scaleups, and non-profit organizations across diverse regions including the UK, Europe, Asia, and Canada. Within the company, he catalyzes financial innovation and excellence, ensuring meticulous adherence to fiscal best practices and fostering sustainable growth trajectories.`,
+//       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=600&fit=crop&crop=face',
+//       skills: ['Accounting', 'Tax Strategy', 'Compliance', 'Audit'],
+//       social: {
+//         linkedin: 'https://linkedin.com/in/gurijesh-jain',
+//         x: 'https://x.com/gurijesh-jain',
+//         email: 'gurijesh@nexusai.com',
+//       },
+//     },
+//   ];
+
+//   const quickLinks = [
+//     { label: 'About Us', path: '/about' },
+//     { label: 'Our Team', path: '/team' },
+//     { label: 'Careers', path: '/careers' },
+//     { label: 'Contact', path: '/contact' },
+//   ];
+
+//   const socialLinks = [
+//     { label: 'LinkedIn', icon: <LinkedInIcon />, color: '#0A66C2' },
+//     { label: 'X', icon: <XIcon />, color: '#000000' },
+//     { label: 'Email', icon: <EmailIcon />, color: '#EA4335' },
+//   ];
+
+//   return (
+//     <Box sx={{ overflow: 'hidden' }}>
+//       {/* Hero Section with background pattern */}
+//       <Box
+//         sx={{
+//           background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
+//           color: 'white',
+//           py: { xs: 8, md: 12 },
+//           position: 'relative',
+//           overflow: 'hidden',
+//           '&::before': {
+//             content: '""',
+//             position: 'absolute',
+//             top: 0,
+//             left: 0,
+//             right: 0,
+//             bottom: 0,
+//             backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)',
+//           },
+//         }}
+//       >
+//         <Container maxWidth="lg">
+//           <Box sx={{ maxWidth: 800, mx: 'auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+//             <motion.div
+//               initial={{ opacity: 0, y: 30 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.8 }}
+//             >
+//               <Typography
+//                 variant="h1"
+//                 gutterBottom
+//                 sx={{
+//                   fontSize: isMobile ? '2.5rem' : '3.5rem',
+//                   fontWeight: 800,
+//                   background: 'linear-gradient(135deg, #FFFFFF 0%, #10B981 100%)',
+//                   WebkitBackgroundClip: 'text',
+//                   WebkitTextFillColor: 'transparent',
+//                   mb: 2,
+//                 }}
+//               >
+//                 The Faces of NexusAI
+//               </Typography>
+
+//               <Typography
+//                 variant="h5"
+//                 sx={{
+//                   color: '#CBD5E1',
+//                   fontWeight: 400,
+//                   mb: 4,
+//                   opacity: 0.9,
+//                 }}
+//               >
+//                 Meet the visionary leaders driving innovation and excellence in enterprise AI solutions
+//               </Typography>
+
+//               <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
+//                 <Button
+//                   variant="contained"
+//                   component={Link}
+//                   to="/contact"
+//                   endIcon={<ArrowIcon />}
+//                   sx={{
+//                     backgroundColor: '#10B981',
+//                     color: 'white',
+//                     px: 4,
+//                     py: 1.5,
+//                     borderRadius: 2,
+//                     fontWeight: 600,
+//                     '&:hover': {
+//                       backgroundColor: '#059669',
+//                       transform: 'translateY(-2px)',
+//                     },
+//                     transition: 'all 0.3s ease',
+//                   }}
+//                 >
+//                   Start the dialogue
+//                 </Button>
+
+//                 <Button
+//                   variant="outlined"
+//                   component={Link}
+//                   to="/careers"
+//                   sx={{
+//                     borderColor: 'rgba(255, 255, 255, 0.3)',
+//                     color: 'white',
+//                     px: 4,
+//                     py: 1.5,
+//                     borderRadius: 2,
+//                     fontWeight: 600,
+//                     '&:hover': {
+//                       borderColor: '#10B981',
+//                       backgroundColor: 'rgba(16, 185, 129, 0.1)',
+//                     },
+//                   }}
+//                 >
+//                   Join Our Team
+//                 </Button>
+//               </Box>
+//             </motion.div>
+//           </Box>
+//         </Container>
+//       </Box>
+
+//       {/* Team Members Section */}
+//       <Container maxWidth="lg" sx={{ py: 8 }}>
+//         {teamMembers.map((member, index) => (
+//           <Box key={member.id} sx={{ mb: 12 }}>
+//             <Grid container spacing={6} alignItems="center">
+//               {/* Image Column - Alternates sides based on index */}
+//               <Grid 
+//                 item 
+//                 xs={12} 
+//                 md={5} 
+//                 sx={{ order: { xs: 2, md: index % 2 === 0 ? 1 : 2 } }}
+//               >
+//                 <motion.div
+//                   initial={{ opacity: 0, scale: 0.9 }}
+//                   whileInView={{ opacity: 1, scale: 1 }}
+//                   transition={{ duration: 0.8 }}
+//                   viewport={{ once: true }}
+//                 >
+//                   <Box
+//                     sx={{
+//                       position: 'relative',
+//                       borderRadius: 3,
+//                       overflow: 'hidden',
+//                       boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
+//                       aspectRatio: '1/1',
+//                       maxWidth: 500,
+//                       mx: 'auto',
+//                     }}
+//                   >
+//                     <Box
+//                       component="img"
+//                       src={member.image}
+//                       alt={member.name}
+//                       sx={{
+//                         width: '100%',
+//                         height: '100%',
+//                         objectFit: 'cover',
+//                         filter: 'grayscale(10%)',
+//                       }}
+//                     />
+
+//                     {/* Decorative overlay */}
+//                     <Box
+//                       sx={{
+//                         position: 'absolute',
+//                         top: 0,
+//                         left: 0,
+//                         right: 0,
+//                         bottom: 0,
+//                         background: 'linear-gradient(to bottom, transparent 70%, rgba(16, 23, 42, 0.8))',
+//                       }}
+//                     />
+
+//                     {/* Name overlay */}
+//                     <Box
+//                       sx={{
+//                         position: 'absolute',
+//                         bottom: 0,
+//                         left: 0,
+//                         right: 0,
+//                         p: 4,
+//                         color: 'white',
+//                       }}
+//                     >
+//                       <Typography variant="h5" fontWeight={700}>
+//                         {member.name}
+//                       </Typography>
+//                       <Typography variant="body2" sx={{ color: '#CBD5E1' }}>
+//                         {member.role}
+//                       </Typography>
+//                     </Box>
+//                   </Box>
+//                 </motion.div>
+//               </Grid>
+
+//               {/* Content Column */}
+//               <Grid 
+//                 item 
+//                 xs={12} 
+//                 md={7} 
+//                 sx={{ order: { xs: 1, md: index % 2 === 0 ? 2 : 1 } }}
+//               >
+//                 <motion.div
+//                   initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+//                   whileInView={{ opacity: 1, x: 0 }}
+//                   transition={{ duration: 0.8, delay: 0.2 }}
+//                   viewport={{ once: true }}
+//                 >
+//                   <Box sx={{ maxWidth: 600, ml: { md: index % 2 === 0 ? 0 : 'auto' }, mr: { md: index % 2 === 0 ? 'auto' : 0 } }}>
+//                     {/* Role Chip */}
+//                     <Chip
+//                       label={member.role}
+//                       sx={{
+//                         backgroundColor: '#10B98115',
+//                         color: '#10B981',
+//                         fontWeight: 600,
+//                         mb: 3,
+//                         px: 2,
+//                         py: 1,
+//                       }}
+//                     />
+
+//                     {/* Name */}
+//                     <Typography
+//                       variant="h3"
+//                       gutterBottom
+//                       sx={{
+//                         color: '#1E293B',
+//                         fontWeight: 800,
+//                         fontSize: { xs: '2rem', md: '2.5rem' },
+//                         mb: 2,
+//                       }}
+//                     >
+//                       {member.name}
+//                     </Typography>
+
+//                     {/* Quick Info */}
+//                     <Box sx={{ display: 'flex', gap: 4, mb: 4, flexWrap: 'wrap' }}>
+//                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+//                         <BusinessIcon sx={{ color: '#64748B', fontSize: 20 }} />
+//                         <Typography sx={{ color: '#64748B', fontWeight: 500 }}>
+//                           {member.experience} experience
+//                         </Typography>
+//                       </Box>
+//                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+//                         <LocationIcon sx={{ color: '#64748B', fontSize: 20 }} />
+//                         <Typography sx={{ color: '#64748B', fontWeight: 500 }}>
+//                           {member.education}
+//                         </Typography>
+//                       </Box>
+//                     </Box>
+
+//                     {/* Bio */}
+//                     <Typography
+//                       variant="body1"
+//                       paragraph
+//                       sx={{
+//                         color: '#475569',
+//                         lineHeight: 1.8,
+//                         fontSize: '1.1rem',
+//                         mb: 4,
+//                       }}
+//                     >
+//                       {member.bio}
+//                     </Typography>
+
+//                     {/* Skills */}
+//                     <Box sx={{ mb: 4 }}>
+//                       <Typography variant="h6" gutterBottom sx={{ color: '#1E293B', fontWeight: 600 }}>
+//                         Expertise
+//                       </Typography>
+//                       <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+//                         {member.skills.map((skill, idx) => (
+//                           <Chip
+//                             key={idx}
+//                             label={skill}
+//                             sx={{
+//                               backgroundColor: '#F1F5F9',
+//                               color: '#475569',
+//                               fontWeight: 500,
+//                               borderRadius: 1,
+//                             }}
+//                           />
+//                         ))}
+//                       </Box>
+//                     </Box>
+
+//                     {/* Social Links */}
+//                     <Box sx={{ display: 'flex', gap: 2 }}>
+//                       {Object.entries(member.social).map(([platform, link]) => (
+//                         <IconButton
+//                           key={platform}
+//                           href={platform === 'email' ? `mailto:${link}` : link}
+//                           target="_blank"
+//                           rel="noopener noreferrer"
+//                           sx={{
+//                             backgroundColor: '#F1F5F9',
+//                             color: '#475569',
+//                             '&:hover': {
+//                               backgroundColor: '#E2E8F0',
+//                             },
+//                           }}
+//                         >
+//                           {platform === 'linkedin' ? <LinkedInIcon /> :
+//                            platform === 'x' ? <XIcon /> :
+//                            <EmailIcon />}
+//                         </IconButton>
+//                       ))}
+//                     </Box>
+//                   </Box>
+//                 </motion.div>
+//               </Grid>
+//             </Grid>
+
+//             {/* Divider between members */}
+//             {index < teamMembers.length - 1 && (
+//               <Divider sx={{ my: 8, borderColor: '#E2E8F0' }} />
+//             )}
+//           </Box>
+//         ))}
+//       </Container>
+
+//       {/* Bottom Section with Quick Links */}
+//       <Box
+//         sx={{
+//           backgroundColor: '#F8FAFC',
+//           py: 8,
+//           borderTop: '1px solid #E2E8F0',
+//         }}
+//       >
+//         <Container maxWidth="lg">
+//           <Grid container spacing={6}>
+//             {/* Left Column - Quick Links */}
+//             <Grid item xs={12} md={6}>
+//               <motion.div
+//                 initial={{ opacity: 0, y: 30 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.6 }}
+//                 viewport={{ once: true }}
+//               >
+//                 <Typography
+//                   variant="h4"
+//                   gutterBottom
+//                   sx={{ color: '#1E293B', fontWeight: 700, mb: 4 }}
+//                 >
+//                   Start the dialogue, unlock possibilities
+//                 </Typography>
+
+//                 <Grid container spacing={3}>
+//                   {[
+//                     { title: 'LinkedIn', subtitle: 'Follow for updates', icon: <LinkedInIcon sx={{ color: '#0A66C2' }} /> },
+//                     { title: 'X', subtitle: 'Latest news', icon: <XIcon sx={{ color: '#000000' }} /> },
+//                     { title: 'Email', subtitle: 'Get in touch', icon: <EmailIcon sx={{ color: '#EA4335' }} /> },
+//                   ].map((item, idx) => (
+//                     <Grid item xs={12} sm={4} key={idx}>
+//                       <Card
+//                         sx={{
+//                           p: 3,
+//                           border: '1px solid #E2E8F0',
+//                           borderRadius: 2,
+//                           backgroundColor: 'white',
+//                           textAlign: 'center',
+//                           transition: 'all 0.3s ease',
+//                           '&:hover': {
+//                             transform: 'translateY(-4px)',
+//                             boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+//                           },
+//                         }}
+//                       >
+//                         <Box sx={{ mb: 2 }}>
+//                           {item.icon}
+//                         </Box>
+//                         <Typography variant="h6" sx={{ color: '#1E293B', fontWeight: 600 }}>
+//                           {item.title}
+//                         </Typography>
+//                         <Typography variant="body2" sx={{ color: '#64748B' }}>
+//                           {item.subtitle}
+//                         </Typography>
+//                       </Card>
+//                     </Grid>
+//                   ))}
+//                 </Grid>
+//               </motion.div>
+//             </Grid>
+
+//             {/* Right Column - Navigation Links */}
+//             <Grid item xs={12} md={6}>
+//               <motion.div
+//                 initial={{ opacity: 0, y: 30 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.6, delay: 0.2 }}
+//                 viewport={{ once: true }}
+//               >
+//                 <Paper
+//                   sx={{
+//                     p: 4,
+//                     backgroundColor: 'white',
+//                     borderRadius: 3,
+//                     border: '1px solid #E2E8F0',
+//                   }}
+//                 >
+//                   <Typography
+//                     variant="h5"
+//                     gutterBottom
+//                     sx={{ color: '#1E293B', fontWeight: 700, mb: 4 }}
+//                   >
+//                     Quick Links
+//                   </Typography>
+
+//                   <Grid container spacing={2}>
+//                     {quickLinks.map((link, idx) => (
+//                       <Grid item xs={6} key={idx}>
+//                         <Button
+//                           component={Link}
+//                           to={link.path}
+//                           fullWidth
+//                           sx={{
+//                             justifyContent: 'flex-start',
+//                             color: '#475569',
+//                             fontWeight: 500,
+//                             py: 1.5,
+//                             px: 2,
+//                             borderRadius: 1,
+//                             '&:hover': {
+//                               backgroundColor: '#F1F5F9',
+//                               color: '#10B981',
+//                             },
+//                           }}
+//                         >
+//                           {link.label}
+//                         </Button>
+//                       </Grid>
+//                     ))}
+//                   </Grid>
+
+//                   <Box sx={{ mt: 4, pt: 4, borderTop: '1px solid #E2E8F0' }}>
+//                     <Typography
+//                       variant="h6"
+//                       gutterBottom
+//                       sx={{ color: '#1E293B', fontWeight: 600 }}
+//                     >
+//                       Connect with us
+//                     </Typography>
+//                     <Typography variant="body2" sx={{ color: '#64748B', mb: 3 }}>
+//                       Ready to transform your business with AI?
+//                     </Typography>
+//                     <Button
+//                       variant="contained"
+//                       component={Link}
+//                       to="/contact"
+//                       endIcon={<ArrowIcon />}
+//                       fullWidth
+//                       sx={{
+//                         backgroundColor: '#10B981',
+//                         color: 'white',
+//                         py: 1.5,
+//                         borderRadius: 2,
+//                         fontWeight: 600,
+//                         '&:hover': {
+//                           backgroundColor: '#059669',
+//                         },
+//                       }}
+//                     >
+//                       Schedule a Consultation
+//                     </Button>
+//                   </Box>
+//                 </Paper>
+//               </motion.div>
+//             </Grid>
+//           </Grid>
+//         </Container>
+//       </Box>
+//     </Box>
+//   );
+// };
+
+// export default Team;
+
+
 import React from 'react';
 import {
   Box,
@@ -396,10 +933,8 @@ import {
   IconButton,
   Button,
   Card,
-  Avatar,
   Paper,
   Divider,
-  Stack,
   useTheme,
   useMediaQuery,
   Chip,
@@ -409,9 +944,8 @@ import {
   X as XIcon,
   ArrowForward as ArrowIcon,
   Email as EmailIcon,
-  Phone as PhoneIcon,
-  LocationOn as LocationIcon,
   Business as BusinessIcon,
+  School as SchoolIcon,
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -428,13 +962,13 @@ const Team = () => {
       bio: `Mansi Dixit is the founder and CEO, bringing over 8 years of extensive finance experience to the team. With a background spanning JP Morgan Chase in Corporate Finance, Ernst & Young in Mergers and Acquisitions, and Bankers without Boundaries in Sustainable Finance, Mansi has a proven track record of success in diverse financial environments. She brings a wealth of expertise from her work with both international and Indian startups, where she has provided mentorship and strategic guidance. Mansi is a Chartered Accountant from the Institute of Chartered Accountants of India and is committed to promoting diversity and inclusion in the finance industry, serving as an advisor to various international organizations focused on this mission.`,
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=600&fit=crop&crop=face',
       skills: ['Finance', 'Strategy', 'Leadership', 'M&A'],
+      experience: '8+ years experience',
+      education: 'Chartered Accountant, ICAI',
       social: {
         linkedin: 'https://linkedin.com/in/mansi-dixit',
         x: 'https://x.com/mansi-dixit',
         email: 'mansi@nexusai.com',
       },
-      experience: '8+ years',
-      education: 'Chartered Accountant, ICAI',
     },
     {
       id: 2,
@@ -443,13 +977,13 @@ const Team = () => {
       bio: `Gurijesh is a practicing Chartered Accountant registered with the Institute of Chartered Accountants of India who brings over a decade of comprehensive expertise to his role as Chief Financial Lead. His illustrious career spans across finance, accounts, auditing, and advisory services, with a particular focus on guiding clients through financial management, tax strategies, and regulatory compliance globally. Gurijesh's forte lies in leading finance operations for startups, scaleups, and non-profit organizations across diverse regions including the UK, Europe, Asia, and Canada. Within the company, he catalyzes financial innovation and excellence, ensuring meticulous adherence to fiscal best practices and fostering sustainable growth trajectories.`,
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=600&fit=crop&crop=face',
       skills: ['Accounting', 'Tax Strategy', 'Compliance', 'Audit'],
+      experience: '10+ years experience',
+      education: 'Chartered Accountant, ICAI',
       social: {
         linkedin: 'https://linkedin.com/in/gurijesh-jain',
         x: 'https://x.com/gurijesh-jain',
         email: 'gurijesh@nexusai.com',
       },
-      experience: '10+ years',
-      education: 'Chartered Accountant, ICAI',
     },
   ];
 
@@ -458,12 +992,6 @@ const Team = () => {
     { label: 'Our Team', path: '/team' },
     { label: 'Careers', path: '/careers' },
     { label: 'Contact', path: '/contact' },
-  ];
-
-  const socialLinks = [
-    { label: 'LinkedIn', icon: <LinkedInIcon />, color: '#0A66C2' },
-    { label: 'X', icon: <XIcon />, color: '#000000' },
-    { label: 'Email', icon: <EmailIcon />, color: '#EA4335' },
   ];
 
   return (
@@ -508,7 +1036,7 @@ const Team = () => {
               >
                 The Faces of NexusAI
               </Typography>
-              
+
               <Typography
                 variant="h5"
                 sx={{
@@ -520,7 +1048,7 @@ const Team = () => {
               >
                 Meet the visionary leaders driving innovation and excellence in enterprise AI solutions
               </Typography>
-              
+
               <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
                 <Button
                   variant="contained"
@@ -543,7 +1071,7 @@ const Team = () => {
                 >
                   Start the dialogue
                 </Button>
-                
+
                 <Button
                   variant="outlined"
                   component={Link}
@@ -575,10 +1103,10 @@ const Team = () => {
           <Box key={member.id} sx={{ mb: 12 }}>
             <Grid container spacing={6} alignItems="center">
               {/* Image Column - Alternates sides based on index */}
-              <Grid 
-                item 
-                xs={12} 
-                md={5} 
+              <Grid
+                item
+                xs={12}
+                md={5}
                 sx={{ order: { xs: 2, md: index % 2 === 0 ? 1 : 2 } }}
               >
                 <motion.div
@@ -609,46 +1137,15 @@ const Team = () => {
                         filter: 'grayscale(10%)',
                       }}
                     />
-                    
-                    {/* Decorative overlay */}
-                    <Box
-                      sx={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        background: 'linear-gradient(to bottom, transparent 70%, rgba(16, 23, 42, 0.8))',
-                      }}
-                    />
-                    
-                    {/* Name overlay */}
-                    <Box
-                      sx={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        p: 4,
-                        color: 'white',
-                      }}
-                    >
-                      <Typography variant="h5" fontWeight={700}>
-                        {member.name}
-                      </Typography>
-                      <Typography variant="body2" sx={{ color: '#CBD5E1' }}>
-                        {member.role}
-                      </Typography>
-                    </Box>
                   </Box>
                 </motion.div>
               </Grid>
-              
+
               {/* Content Column */}
-              <Grid 
-                item 
-                xs={12} 
-                md={7} 
+              <Grid
+                item
+                xs={12}
+                md={7}
                 sx={{ order: { xs: 1, md: index % 2 === 0 ? 2 : 1 } }}
               >
                 <motion.div
@@ -658,49 +1155,50 @@ const Team = () => {
                   viewport={{ once: true }}
                 >
                   <Box sx={{ maxWidth: 600, ml: { md: index % 2 === 0 ? 0 : 'auto' }, mr: { md: index % 2 === 0 ? 'auto' : 0 } }}>
-                    {/* Role Chip */}
-                    <Chip
-                      label={member.role}
-                      sx={{
-                        backgroundColor: '#10B98115',
-                        color: '#10B981',
-                        fontWeight: 600,
-                        mb: 3,
-                        px: 2,
-                        py: 1,
-                      }}
-                    />
-                    
                     {/* Name */}
                     <Typography
-                      variant="h3"
+                      variant="h2"
                       gutterBottom
                       sx={{
                         color: '#1E293B',
                         fontWeight: 800,
-                        fontSize: { xs: '2rem', md: '2.5rem' },
-                        mb: 2,
+                        fontSize: { xs: '2.5rem', md: '3rem' },
+                        mb: 1,
                       }}
                     >
                       {member.name}
                     </Typography>
-                    
+
+                    {/* Role - Below Name */}
+                    <Typography
+                      variant="h4"
+                      gutterBottom
+                      sx={{
+                        color: '#10B981',
+                        fontWeight: 600,
+                        fontSize: { xs: '1.5rem', md: '2rem' },
+                        mb: 4,
+                      }}
+                    >
+                      {member.role}
+                    </Typography>
+
                     {/* Quick Info */}
                     <Box sx={{ display: 'flex', gap: 4, mb: 4, flexWrap: 'wrap' }}>
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                         <BusinessIcon sx={{ color: '#64748B', fontSize: 20 }} />
                         <Typography sx={{ color: '#64748B', fontWeight: 500 }}>
-                          {member.experience} experience
+                          {member.experience}
                         </Typography>
                       </Box>
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        <LocationIcon sx={{ color: '#64748B', fontSize: 20 }} />
+                        <SchoolIcon sx={{ color: '#64748B', fontSize: 20 }} />
                         <Typography sx={{ color: '#64748B', fontWeight: 500 }}>
                           {member.education}
                         </Typography>
                       </Box>
                     </Box>
-                    
+
                     {/* Bio */}
                     <Typography
                       variant="body1"
@@ -714,7 +1212,7 @@ const Team = () => {
                     >
                       {member.bio}
                     </Typography>
-                    
+
                     {/* Skills */}
                     <Box sx={{ mb: 4 }}>
                       <Typography variant="h6" gutterBottom sx={{ color: '#1E293B', fontWeight: 600 }}>
@@ -726,18 +1224,22 @@ const Team = () => {
                             key={idx}
                             label={skill}
                             sx={{
-                              backgroundColor: '#F1F5F9',
-                              color: '#475569',
+                              backgroundColor: '#10B98115',
+                              color: '#10B981',
                               fontWeight: 500,
                               borderRadius: 1,
+                              border: '1px solid #10B98130',
                             }}
                           />
                         ))}
                       </Box>
                     </Box>
-                    
+
                     {/* Social Links */}
-                    <Box sx={{ display: 'flex', gap: 2 }}>
+                    <Box sx={{ display: 'flex', gap: 2, alignItems: 'center', mt: 4 }}>
+                      <Typography variant="body1" sx={{ color: '#64748B', fontWeight: 500, mr: 2 }}>
+                        Connect:
+                      </Typography>
                       {Object.entries(member.social).map(([platform, link]) => (
                         <IconButton
                           key={platform}
@@ -749,12 +1251,14 @@ const Team = () => {
                             color: '#475569',
                             '&:hover': {
                               backgroundColor: '#E2E8F0',
+                              transform: 'translateY(-2px)',
                             },
+                            transition: 'all 0.3s ease',
                           }}
                         >
                           {platform === 'linkedin' ? <LinkedInIcon /> :
-                           platform === 'x' ? <XIcon /> :
-                           <EmailIcon />}
+                            platform === 'x' ? <XIcon /> :
+                              <EmailIcon />}
                         </IconButton>
                       ))}
                     </Box>
@@ -762,7 +1266,7 @@ const Team = () => {
                 </motion.div>
               </Grid>
             </Grid>
-            
+
             {/* Divider between members */}
             {index < teamMembers.length - 1 && (
               <Divider sx={{ my: 8, borderColor: '#E2E8F0' }} />
@@ -781,7 +1285,7 @@ const Team = () => {
       >
         <Container maxWidth="lg">
           <Grid container spacing={6}>
-            {/* Left Column - Quick Links */}
+            {/* Left Column - Social Links */}
             <Grid item xs={12} md={6}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -790,31 +1294,55 @@ const Team = () => {
                 viewport={{ once: true }}
               >
                 <Typography
-                  variant="h4"
+                  variant="h3"
                   gutterBottom
                   sx={{ color: '#1E293B', fontWeight: 700, mb: 4 }}
                 >
                   Start the dialogue, unlock possibilities
                 </Typography>
-                
+
                 <Grid container spacing={3}>
                   {[
-                    { title: 'LinkedIn', subtitle: 'Follow for updates', icon: <LinkedInIcon sx={{ color: '#0A66C2' }} /> },
-                    { title: 'X', subtitle: 'Latest news', icon: <XIcon sx={{ color: '#000000' }} /> },
-                    { title: 'Email', subtitle: 'Get in touch', icon: <EmailIcon sx={{ color: '#EA4335' }} /> },
+                    {
+                      title: 'LinkedIn',
+                      subtitle: 'Follow for updates',
+                      icon: <LinkedInIcon sx={{ color: '#0A66C2', fontSize: 40 }} />,
+                      color: '#0A66C2',
+                      link: 'https://linkedin.com/company/nexusai'
+                    },
+                    {
+                      title: 'X',
+                      subtitle: 'Latest news',
+                      icon: <XIcon sx={{ color: '#000000', fontSize: 40 }} />,
+                      color: '#000000',
+                      link: 'https://x.com/nexusai'
+                    },
+                    {
+                      title: 'Email',
+                      subtitle: 'Get in touch',
+                      icon: <EmailIcon sx={{ color: '#EA4335', fontSize: 40 }} />,
+                      color: '#EA4335',
+                      link: 'mailto:contact@nexusai.com'
+                    },
                   ].map((item, idx) => (
                     <Grid item xs={12} sm={4} key={idx}>
                       <Card
+                        component="a"
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         sx={{
                           p: 3,
-                          border: '1px solid #E2E8F0',
+                          border: `1px solid ${item.color}30`,
                           borderRadius: 2,
                           backgroundColor: 'white',
                           textAlign: 'center',
                           transition: 'all 0.3s ease',
+                          textDecoration: 'none',
                           '&:hover': {
                             transform: 'translateY(-4px)',
-                            boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+                            boxShadow: `0 10px 25px ${item.color}20`,
+                            borderColor: item.color,
                           },
                         }}
                       >
@@ -833,7 +1361,7 @@ const Team = () => {
                 </Grid>
               </motion.div>
             </Grid>
-            
+
             {/* Right Column - Navigation Links */}
             <Grid item xs={12} md={6}>
               <motion.div
@@ -848,72 +1376,53 @@ const Team = () => {
                     backgroundColor: 'white',
                     borderRadius: 3,
                     border: '1px solid #E2E8F0',
+                    height: '100%',
                   }}
                 >
                   <Typography
-                    variant="h5"
+                    variant="h3"
                     gutterBottom
                     sx={{ color: '#1E293B', fontWeight: 700, mb: 4 }}
                   >
                     Quick Links
                   </Typography>
-                  
-                  <Grid container spacing={2}>
-                    {quickLinks.map((link, idx) => (
-                      <Grid item xs={6} key={idx}>
-                        <Button
-                          component={Link}
-                          to={link.path}
-                          fullWidth
-                          sx={{
-                            justifyContent: 'flex-start',
-                            color: '#475569',
-                            fontWeight: 500,
-                            py: 1.5,
-                            px: 2,
-                            borderRadius: 1,
-                            '&:hover': {
-                              backgroundColor: '#F1F5F9',
-                              color: '#10B981',
-                            },
-                          }}
-                        >
-                          {link.label}
-                        </Button>
-                      </Grid>
-                    ))}
-                  </Grid>
-                  
-                  <Box sx={{ mt: 4, pt: 4, borderTop: '1px solid #E2E8F0' }}>
+
+                  <Box sx={{ mb: 4 }}>
                     <Typography
                       variant="h6"
                       gutterBottom
-                      sx={{ color: '#1E293B', fontWeight: 600 }}
+                      sx={{ color: '#64748B', fontWeight: 600, mb: 2 }}
                     >
-                      Connect with us
+                      Explore More
                     </Typography>
-                    <Typography variant="body2" sx={{ color: '#64748B', mb: 3 }}>
-                      Ready to transform your business with AI?
-                    </Typography>
-                    <Button
-                      variant="contained"
-                      component={Link}
-                      to="/contact"
-                      endIcon={<ArrowIcon />}
-                      fullWidth
-                      sx={{
-                        backgroundColor: '#10B981',
-                        color: 'white',
-                        py: 1.5,
-                        borderRadius: 2,
-                        fontWeight: 600,
-                        '&:hover': {
-                          backgroundColor: '#059669',
-                        },
-                      }}
-                    >
-                      Schedule a Consultation
-                    </Button>
+                    <Grid container spacing={2}>
+                      {quickLinks.map((link, idx) => (
+                        <Grid item xs={6} key={idx}>
+                          <Button
+                            component={Link}
+                            to={link.path}
+                            fullWidth
+                            sx={{
+                              justifyContent: 'flex-start',
+                              color: '#475569',
+                              fontWeight: 500,
+                              py: 1.5,
+                              px: 2,
+                              borderRadius: 1,
+                              '&:hover': {
+                                backgroundColor: '#F1F5F9',
+                                color: '#10B981',
+                              },
+                            }}
+                          >
+                            {link.label}
+                          </Button>
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </Box>
+
+                  <Box sx={{ pt: 4, borderTop: '1px solid #E2E8F0' }}>
                   </Box>
                 </Paper>
               </motion.div>
