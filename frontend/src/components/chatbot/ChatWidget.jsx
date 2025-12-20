@@ -152,9 +152,6 @@ const ChatWidget = () => {
                   <Typography variant="subtitle1" fontWeight={600}>
                     AI Assistant
                   </Typography>
-                  <Typography variant="caption">
-                    Powered by Groq & Llama 3.3
-                  </Typography>
                 </Box>
                 <IconButton
                   size="small"
