@@ -962,8 +962,6 @@ const Team = () => {
       bio: `Mansi Dixit is the founder and CEO, bringing over 8 years of extensive finance experience to the team. With a background spanning JP Morgan Chase in Corporate Finance, Ernst & Young in Mergers and Acquisitions, and Bankers without Boundaries in Sustainable Finance, Mansi has a proven track record of success in diverse financial environments. She brings a wealth of expertise from her work with both international and Indian startups, where she has provided mentorship and strategic guidance. Mansi is a Chartered Accountant from the Institute of Chartered Accountants of India and is committed to promoting diversity and inclusion in the finance industry, serving as an advisor to various international organizations focused on this mission.`,
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=600&fit=crop&crop=face',
       skills: ['Finance', 'Strategy', 'Leadership', 'M&A'],
-      experience: '8+ years experience',
-      education: 'Chartered Accountant, ICAI',
       social: {
         linkedin: 'https://linkedin.com/in/mansi-dixit',
         x: 'https://x.com/mansi-dixit',
@@ -972,13 +970,12 @@ const Team = () => {
     },
     {
       id: 2,
-      name: 'Gurijesh Jain',
-      role: 'Co-Founder and Chief Financial Lead',
-      bio: `Gurijesh is a practicing Chartered Accountant registered with the Institute of Chartered Accountants of India who brings over a decade of comprehensive expertise to his role as Chief Financial Lead. His illustrious career spans across finance, accounts, auditing, and advisory services, with a particular focus on guiding clients through financial management, tax strategies, and regulatory compliance globally. Gurijesh's forte lies in leading finance operations for startups, scaleups, and non-profit organizations across diverse regions including the UK, Europe, Asia, and Canada. Within the company, he catalyzes financial innovation and excellence, ensuring meticulous adherence to fiscal best practices and fostering sustainable growth trajectories.`,
+      name: 'Sahil Khan',
+      role: 'Co-Founder and Chief Technology Officer',
+      bio: `Sahil brings strong expertise in artificial intelligence, machine learning, and cloud-native architectures, with a proven ability to translate advanced technical capabilities into dependable, production-grade solutions. He leads product engineering, platform architecture, and technology strategy, ensuring alignment between technical execution and the company’s strategic and commercial objectives.
+      As Chief Technology Officer, Sahil provides strategic and operational leadership across engineering functions, drives innovation with discipline, and builds resilient technology foundations that support sustainable growth, operational excellence, and long-term value creation.`,
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=600&fit=crop&crop=face',
-      skills: ['Accounting', 'Tax Strategy', 'Compliance', 'Audit'],
-      experience: '10+ years experience',
-      education: 'Chartered Accountant, ICAI',
+      skills: ['Artificial Intelligence', ' Machine Learning', 'Generative AI'],
       social: {
         linkedin: 'https://linkedin.com/in/gurijesh-jain',
         x: 'https://x.com/gurijesh-jain',
@@ -1174,9 +1171,9 @@ const Team = () => {
                       variant="h4"
                       gutterBottom
                       sx={{
-                        color: '#10B981',
-                        fontWeight: 600,
-                        fontSize: { xs: '1.5rem', md: '2rem' },
+                        color: '#black',
+                        fontWeight: 300,
+                        fontSize: { xs: '1rem'},
                         mb: 4,
                       }}
                     >
@@ -1186,13 +1183,11 @@ const Team = () => {
                     {/* Quick Info */}
                     <Box sx={{ display: 'flex', gap: 4, mb: 4, flexWrap: 'wrap' }}>
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        <BusinessIcon sx={{ color: '#64748B', fontSize: 20 }} />
                         <Typography sx={{ color: '#64748B', fontWeight: 500 }}>
                           {member.experience}
                         </Typography>
                       </Box>
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        <SchoolIcon sx={{ color: '#64748B', fontSize: 20 }} />
                         <Typography sx={{ color: '#64748B', fontWeight: 500 }}>
                           {member.education}
                         </Typography>
