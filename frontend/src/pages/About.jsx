@@ -241,7 +241,6 @@
 
 // export default About;
 
-
 import React, { useState } from 'react';
 import {
   Box,
@@ -257,6 +256,12 @@ import {
   IconButton,
   Dialog,
   DialogContent,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Chip,
+  alpha,
 } from '@mui/material';
 import {
   PlayCircle as PlayIcon,
@@ -268,6 +273,13 @@ import {
   Dataset as DataIcon,
   Cloud as CloudIcon,
   Close as CloseIcon,
+  CheckCircle as CheckIcon,
+  Groups as GroupsIcon,
+  RocketLaunch as RocketIcon,
+  Handshake as HandshakeIcon,
+  TrendingUp as TrendingUpIcon,
+  Language as LanguageIcon,
+  EmojiObjects as InnovationIcon,
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 
@@ -321,7 +333,7 @@ const About = () => {
     {
       title: 'Natural Language Processing',
       description: 'Understand and generate human-like text',
-      image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w-400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop',
     },
     {
       title: 'Computer Vision',
@@ -340,6 +352,30 @@ const About = () => {
     { number: '500+', label: 'Enterprise Clients', icon: '🏢' },
     { number: '99.99%', label: 'Model Accuracy', icon: '🎯' },
     { number: '24/7', label: 'AI Monitoring', icon: '👁️' },
+  ];
+
+  // Why Work With Us Features
+  const whyChooseUs = [
+    {
+      icon: <GroupsIcon sx={{ fontSize: 30 }} />,
+      title: 'User-Centered AI Design',
+      description: 'We design AI solutions that prioritize human experience and usability.',
+    },
+    {
+      icon: <RocketIcon sx={{ fontSize: 30 }} />,
+      title: 'Flexible & Agile AI Teams',
+      description: 'Adaptive teams that evolve with your AI implementation needs.',
+    },
+    {
+      icon: <TrendingUpIcon sx={{ fontSize: 30 }} />,
+      title: 'Cross-Industry AI Expertise',
+      description: 'Proven AI solutions across healthcare, finance, retail, and manufacturing.',
+    },
+    {
+      icon: <LanguageIcon sx={{ fontSize: 30 }} />,
+      title: 'Global AI Collaboration',
+      description: 'Seamless AI deployment and support across time zones and regions.',
+    },
   ];
 
   return (
@@ -425,6 +461,478 @@ const About = () => {
         </Container>
       </Box>
 
+      {/* NEW SECTION: Why Work With NexusAI */}
+      <Container maxWidth="lg" sx={{ py: 10 }}>
+        <Grid container spacing={6} alignItems="center">
+          <Grid item xs={12} md={6}>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Chip
+                label="WHY CHOOSE US"
+                sx={{
+                  backgroundColor: alpha(theme.palette.primary.main, 0.1),
+                  color: 'primary.main',
+                  fontWeight: 600,
+                  mb: 3,
+                  px: 2,
+                  py: 1,
+                }}
+              />
+              <Typography variant="h2" gutterBottom fontWeight={800} color="primary.main">
+                Why Work With NexusAI?
+              </Typography>
+              <Typography variant="h5" gutterBottom fontWeight={600} sx={{ mb: 3 }}>
+                We focus on building long-term relationships through reliable AI service and measurable results.
+              </Typography>
+              <Typography variant="body1" color="text.secondary" paragraph sx={{ mb: 4 }}>
+                At NexusAI, we don't just implement AI—we build intelligent partnerships. Here's what sets us apart in the AI landscape.
+              </Typography>
+              
+              <Grid container spacing={3}>
+                {whyChooseUs.map((item, index) => (
+                  <Grid item xs={12} sm={6} key={index}>
+                    <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 3 }}>
+                      <Box
+                        sx={{
+                          width: 50,
+                          height: 50,
+                          backgroundColor: 'primary.50',
+                          borderRadius: '12px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'primary.main',
+                          mr: 2,
+                          flexShrink: 0,
+                        }}
+                      >
+                        {item.icon}
+                      </Box>
+                      <Box>
+                        <Typography variant="h6" fontWeight={600} gutterBottom>
+                          {item.title}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {item.description}
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
+            </motion.div>
+          </Grid>
+          
+          <Grid item xs={12} md={6}>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Box
+                sx={{
+                  position: 'relative',
+                  borderRadius: 4,
+                  overflow: 'hidden',
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+                  height: '100%',
+                  minHeight: 400,
+                }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=600&fit=crop&crop=center"
+                  alt="NexusAI Team Collaboration"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: 'linear-gradient(transparent, rgba(15, 23, 42, 0.9))',
+                    color: 'white',
+                    p: 4,
+                  }}
+                >
+                  <Typography variant="h5" fontWeight={600}>
+                    Trusted by 500+ Enterprises
+                  </Typography>
+                  <Typography variant="body2" sx={{ mt: 1 }}>
+                    Join companies that trust NexusAI for their digital transformation
+                  </Typography>
+                </Box>
+              </Box>
+            </motion.div>
+          </Grid>
+        </Grid>
+      </Container>
+
+      {/* Mission & Vision Side-by-Side Section */}
+      <Box sx={{ backgroundColor: 'grey.50', py: 10 }}>
+        <Container maxWidth="lg">
+          <Typography
+            variant="h2"
+            gutterBottom
+            fontWeight={800}
+            sx={{ textAlign: 'center', mb: 6, color: 'primary.main' }}
+          >
+            Our Mission & Vision
+          </Typography>
+          
+          <Grid container spacing={6} alignItems="stretch">
+            {/* Mission Card */}
+            <Grid item xs={12} md={6}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <Card
+                  sx={{
+                    height: '100%',
+                    borderRadius: 4,
+                    overflow: 'hidden',
+                    border: '2px solid',
+                    borderColor: 'primary.100',
+                    backgroundColor: 'white',
+                    position: 'relative',
+                  }}
+                >
+                  <Box
+                    sx={{
+                      height: 200,
+                      position: 'relative',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=300&fit=crop"
+                      alt="AI Mission"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        filter: 'brightness(0.7)',
+                      }}
+                    />
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Typography
+                        variant="h3"
+                        sx={{
+                          color: 'white',
+                          fontWeight: 800,
+                          textAlign: 'center',
+                          textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+                        }}
+                      >
+                        Our Mission
+                      </Typography>
+                    </Box>
+                  </Box>
+                  <CardContent sx={{ p: 4 }}>
+                    <Typography variant="h5" color="primary.main" gutterBottom fontWeight={600}>
+                      Democratizing Artificial Intelligence
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary" paragraph>
+                      We're on a mission to make cutting-edge AI accessible to every business. Our platform transforms complex machine learning algorithms into simple, powerful tools that drive real business impact.
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary">
+                      Founded by AI researchers from leading institutions, we've spent years perfecting neural network architectures that outperform traditional solutions while being more efficient and explainable.
+                    </Typography>
+                    <Box sx={{ mt: 3, display: 'flex', alignItems: 'center', gap: 2 }}>
+                      <Box
+                        sx={{
+                          width: 10,
+                          height: 10,
+                          backgroundColor: 'primary.main',
+                          borderRadius: '50%',
+                        }}
+                      />
+                      <Typography variant="body2" fontWeight={500}>
+                        Making AI accessible to businesses of all sizes
+                      </Typography>
+                    </Box>
+                    <Box sx={{ mt: 1, display: 'flex', alignItems: 'center', gap: 2 }}>
+                      <Box
+                        sx={{
+                          width: 10,
+                          height: 10,
+                          backgroundColor: 'primary.main',
+                          borderRadius: '50%',
+                        }}
+                      />
+                      <Typography variant="body2" fontWeight={500}>
+                        Transforming complex algorithms into simple tools
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </Grid>
+
+            {/* Vision Card */}
+            <Grid item xs={12} md={6}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Card
+                  sx={{
+                    height: '100%',
+                    borderRadius: 4,
+                    overflow: 'hidden',
+                    border: '2px solid',
+                    borderColor: 'secondary.100',
+                    backgroundColor: 'white',
+                    position: 'relative',
+                  }}
+                >
+                  <Box
+                    sx={{
+                      height: 200,
+                      position: 'relative',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=300&fit=crop"
+                      alt="AI Vision"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        filter: 'brightness(0.7)',
+                      }}
+                    />
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Typography
+                        variant="h3"
+                        sx={{
+                          color: 'white',
+                          fontWeight: 800,
+                          textAlign: 'center',
+                          textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+                        }}
+                      >
+                        Our Vision
+                      </Typography>
+                    </Box>
+                  </Box>
+                  <CardContent sx={{ p: 4 }}>
+                    <Typography variant="h5" color="secondary.main" gutterBottom fontWeight={600}>
+                      Shaping an AI-Powered Future
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary" paragraph>
+                      We envision a world where AI seamlessly integrates into every aspect of business and society, creating smarter, more efficient, and more equitable systems for everyone.
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary">
+                      Our vision is to become the leading AI innovation partner for enterprises globally, setting new standards for ethical, transparent, and impactful artificial intelligence.
+                    </Typography>
+                    <Box sx={{ mt: 3, display: 'flex', alignItems: 'center', gap: 2 }}>
+                      <Box
+                        sx={{
+                          width: 10,
+                          height: 10,
+                          backgroundColor: 'secondary.main',
+                          borderRadius: '50%',
+                        }}
+                      />
+                      <Typography variant="body2" fontWeight={500}>
+                        Leading AI innovation for global enterprises
+                      </Typography>
+                    </Box>
+                    <Box sx={{ mt: 1, display: 'flex', alignItems: 'center', gap: 2 }}>
+                      <Box
+                        sx={{
+                          width: 10,
+                          height: 10,
+                          backgroundColor: 'secondary.main',
+                          borderRadius: '50%',
+                        }}
+                      />
+                      <Typography variant="body2" fontWeight={500}>
+                        Setting standards for ethical and transparent AI
+                      </Typography>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* NEW SECTION: Let's Build Something Great */}
+      <Container maxWidth="lg" sx={{ py: 10 }}>
+        <Grid container spacing={6} alignItems="center">
+          <Grid item xs={12} md={6}>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Box
+                sx={{
+                  position: 'relative',
+                  borderRadius: 4,
+                  overflow: 'hidden',
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+                  height: '100%',
+                  minHeight: 400,
+                }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&h-600&fit=crop&crop=center"
+                  alt="NexusAI Team Building AI Solutions"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'linear-gradient(45deg, rgba(15, 23, 42, 0.8) 0%, rgba(56, 189, 248, 0.3) 100%)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    p: 4,
+                  }}
+                >
+                  <Typography
+                    variant="h2"
+                    sx={{
+                      color: 'white',
+                      fontWeight: 800,
+                      textAlign: 'center',
+                      textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+                    }}
+                  >
+                    Building the Future with AI
+                  </Typography>
+                </Box>
+              </Box>
+            </motion.div>
+          </Grid>
+          
+          <Grid item xs={12} md={6}>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Chip
+                label="OUR TEAM"
+                sx={{
+                  backgroundColor: alpha(theme.palette.secondary.main, 0.1),
+                  color: 'secondary.main',
+                  fontWeight: 600,
+                  mb: 3,
+                  px: 2,
+                  py: 1,
+                }}
+              />
+              <Typography variant="h2" gutterBottom fontWeight={800} color="secondary.main">
+                Let's Build Something Great Together
+              </Typography>
+              <Typography variant="h5" gutterBottom fontWeight={600} sx={{ mb: 3 }}>
+                Whether you're launching a startup, scaling an existing product, or exploring new AI possibilities, NexusAI is your trusted AI partner.
+              </Typography>
+              
+              <Typography variant="body1" color="text.secondary" paragraph sx={{ mb: 3 }}>
+                At NexusAI, we believe in the power of holistic leadership and growth. Our team is a collective of visionary AI experts, each driven by a shared commitment to innovation and excellence. Together, we are more than just a team—we are a network connected by a common vision of AI-powered transformation.
+              </Typography>
+              
+              <Typography variant="body1" color="text.secondary" paragraph sx={{ mb: 4 }}>
+                As a leading AI company in the enterprise space, our dedicated development team brings unique perspectives and cutting-edge skills to every project. Each member acts with the autonomy and initiative of a leader, ensuring that our AI solutions benefit from diverse insights and collaborative energy. This approach allows us to deliver groundbreaking results with passion and precision.
+              </Typography>
+              
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 3, flexWrap: 'wrap' }}>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    startIcon={<HandshakeIcon />}
+                    href="/contact"
+                    sx={{
+                      background: 'linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%)',
+                      px: 4,
+                      py: 1.5,
+                      fontSize: '1rem',
+                      fontWeight: 600,
+                      borderRadius: 2,
+                    }}
+                  >
+                    Partner With Us
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    variant="outlined"
+                    size="large"
+                    startIcon={<InnovationIcon />}
+                    href="/services"
+                    sx={{
+                      borderColor: 'primary.main',
+                      color: 'primary.main',
+                      px: 4,
+                      py: 1.5,
+                      fontSize: '1rem',
+                      fontWeight: 600,
+                      borderRadius: 2,
+                    }}
+                  >
+                    Explore AI Solutions
+                  </Button>
+                </motion.div>
+              </Box>
+            </motion.div>
+          </Grid>
+        </Grid>
+      </Container>
+
       {/* AI Capabilities Grid */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
         <Typography
@@ -440,7 +948,8 @@ const About = () => {
             <Grid item xs={12} sm={6} md={3} key={index}>
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
                 <Card
@@ -481,107 +990,6 @@ const About = () => {
         </Grid>
       </Container>
 
-      {/* Our Mission - AI Focused */}
-      <Box sx={{ backgroundColor: 'grey.50', py: 8 }}>
-        <Container maxWidth="lg">
-          <Grid container spacing={6} alignItems="center">
-            <Grid item xs={12} md={6}>
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <Typography
-                  variant="h2"
-                  gutterBottom
-                  fontWeight={700}
-                  color="primary.main"
-                >
-                  Our Mission
-                </Typography>
-                <Typography variant="h4" gutterBottom fontWeight={600}>
-                  Democratizing Artificial Intelligence
-                </Typography>
-                <Typography variant="body1" color="text.secondary" paragraph>
-                  We're on a mission to make cutting-edge AI accessible to every 
-                  business. Our platform transforms complex machine learning algorithms 
-                  into simple, powerful tools that drive real business impact.
-                </Typography>
-                <Typography variant="body1" color="text.secondary" paragraph>
-                  Founded by AI researchers from leading institutions, we've spent 
-                  years perfecting neural network architectures that outperform 
-                  traditional solutions while being more efficient and explainable.
-                </Typography>
-                <Box sx={{ mt: 4 }}>
-                  <Grid container spacing={2}>
-                    <Grid item xs={6}>
-                      <Typography variant="h4" color="primary.main" fontWeight={700}>
-                        50+
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Proprietary AI Models
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={6}>
-                      <Typography variant="h4" color="primary.main" fontWeight={700}>
-                        98%
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        Client Retention Rate
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </Box>
-              </motion.div>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <Box
-                  sx={{
-                    position: 'relative',
-                    borderRadius: 4,
-                    overflow: 'hidden',
-                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-                  }}
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=500&fit=crop&crop=center"
-                    alt="AI Neural Network Visualization"
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      display: 'block',
-                    }}
-                  />
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      background: 'linear-gradient(transparent, rgba(0,0,0,0.8))',
-                      color: 'white',
-                      p: 3,
-                    }}
-                  >
-                    <Typography variant="h6" fontWeight={600}>
-                      Neural Network Visualization
-                    </Typography>
-                    <Typography variant="body2">
-                      Real-time AI model training visualization
-                    </Typography>
-                  </Box>
-                </Box>
-              </motion.div>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-
       {/* AI Values Section */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
         <Typography
@@ -597,7 +1005,8 @@ const About = () => {
             <Grid item xs={12} sm={6} md={4} key={index}>
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
                 <Card
@@ -665,7 +1074,8 @@ const About = () => {
               <Grid item xs={6} md={3} key={index}>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
                   <Typography variant="h4" sx={{ mb: 1, fontSize: '2.5rem' }}>
@@ -774,11 +1184,6 @@ const About = () => {
             <Typography color="white">
               [AI Technology Showcase Video]
             </Typography>
-            {/* Replace with actual video:
-            <video controls style={{ width: '100%', height: '100%' }}>
-              <source src="/ai-showcase.mp4" type="video/mp4" />
-            </video>
-            */}
           </Box>
         </DialogContent>
       </Dialog>
